@@ -1,13 +1,16 @@
-from __future__ import unicode_literals
-
 from django.db import models
 
-class User(models.Model):
-    username = models.CharField(max_length=20)
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
-    email = models.EmailField(max_length=70)
-    date_created = models.DateTimeField(auto_now=True)
+# Create your models here.
 
-    def _str_(self):
-        return "%s" % self.username
+class User(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    user_id = models.TextField()
+    public_key1 = models.TextField()
+    public_key2 = models.TextField()
+    public_key1 = models.TextField()
+    public_key3 = models.TextField()
+    public_key4 = models.TextField()
+    user_session_id= models.TextField()
+
+    class Meta:
+        ordering = ('created',)
